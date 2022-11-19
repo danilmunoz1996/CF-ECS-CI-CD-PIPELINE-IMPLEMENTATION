@@ -1,12 +1,15 @@
-FROM node:10
+# Pull the Node image from Docker Hub
+FROM node:14-slim
 
-WORKDIR /usr/src/app
-
-COPY package.json .
-
-RUN npm install
+# Setting Working Directory
+WORKDIR /usr/app
 
 COPY . .
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+# Install Dependencies
+RUN npm install
+
+EXPOSE 3080
+
+# Run the API on Nodemon
+CMD ["npm", "run", "dev"]
