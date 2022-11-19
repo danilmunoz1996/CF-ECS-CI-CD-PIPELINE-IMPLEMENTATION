@@ -2,7 +2,7 @@ import http from 'http';
 import express from 'express';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
-//import cors from 'cors';
+import cors from 'cors';
 import logger from './util/logger';
 import config from './config';
 import Middlewares from './api/middlewares'
@@ -22,11 +22,9 @@ mongoose.connect(config.mongoose.uri, { useNewUrlParser: true, useUnifiedTopolog
 mongoose.Promise = global.Promise;
 
 // App Setup
-/*
 app.use(cors({
-    origin: ['http://localhost:5000']
+    origin: ['http://127.0.0.1:3000']
 }));
-*/
 app.use(morgan('dev'));
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }));

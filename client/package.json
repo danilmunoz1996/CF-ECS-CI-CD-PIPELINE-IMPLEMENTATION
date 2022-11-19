@@ -2,7 +2,7 @@
   "name": "mern-client",
   "description": "Simple starter package for Redux with React and Babel support",
   "scripts": {
-    "dev": "",
+    "dev": "npm ls react && webpack-dev-server --open --config webpack.dev.js",
     "start": "PORT=3000 serve mernapp",
     "build": "rm -rf mernapp && webpack --config webpack.prod.js",
     "copy:static": "cp -rf ./src/statics mernapp"
