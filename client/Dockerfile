@@ -13,7 +13,7 @@ COPY . .
 
 RUN npm install --silent
 RUN npm install -g webpack
-RUN npm uninstall node-sass && npm install -g node-sass
+#RUN npm uninstall node-sass && npm install -g node-sass
 RUN npm run build
 
 EXPOSE 3000
